@@ -4,6 +4,31 @@
   box-sizing: border-box;
 }
 
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: transparent;
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid #B4BDC4;
+  // padding: 11px 11px;
+}
+
+
+
+.arrows-wrapp {
+  display: flex;
+  gap: 16px;
+}
+
+.title-wrap {
+  align-items: center;
+  text-align: center;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   color: black;
@@ -13,11 +38,13 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 1136px;
-  padding: 40px 0;
+  // max-width: 1136px;
+  max-width: 1440px;
+  padding: 0 152px;
+  // padding: 40px 0;
 }
 
-li {
+li, h2, h1, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
 }
@@ -30,27 +57,45 @@ a {
   padding: 0;
 }
 
+.title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 41px;
+  color: #313237;
+  letter-spacing: -0.01em;
+}
+
 // ---- header ---------
 
 .header {
-  max-width: 1390px;
-  margin: 0 auto;
+  max-width: 1440px;
+  margin: 0 auto 40px;
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 1px 0px #E2E6E9;
+  padding: 0 25px;
 
 
   &__left {
     display: flex;
-    padding: 25px 0 0 25px;
+    align-items: center;
   }
 
   &__right{
     display: flex;
 
     &-icon {
-      padding: 25px 25px 0 25px;
+      // padding: 25px 25px 0 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 25px;
       box-shadow: -1px 0px 0px #E2E6E9;
+
+      &:first-child {
+        padding-right: 25px;
+
+      }
     }
   }
 }
@@ -75,12 +120,30 @@ a {
     position: relative;
     border-bottom: solid 3px transparent;
     transition: all 0.3s ease-in-out;
-    padding: 0 0 25px 0;
+    // margin-bottom: 25px;
+    // padding: 0 0 25px 0;
+    padding: 27px 0 26px ;
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     &:hover {
+      // padding-top: 25px;
       border-bottom: solid 3px #313237;
     }
   }
+
+  // &__link {
+  //   border-bottom: solid 3px transparent;
+  //   transition: all 0.3s ease-in-out;
+
+  //   &:hover {
+  //     border-bottom: solid 3px #313237;
+
+  //   }
+
+  // }
 }
 
 .icons {
@@ -88,6 +151,10 @@ a {
 }
 
 // ----- banner
+
+.hero {
+  margin-bottom: 80px;
+}
 
 .banner {
   display: flex;
@@ -141,21 +208,37 @@ a {
 
 // -------hot prices
 
-.hotPrices-section {
+.hotPrices{
+  margin-bottom: 80px;
 
-  &__title {
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 41px;
-    color: #313237;
-    letter-spacing: -0.01em;
-  }
+  // &__title {
+  //   font-weight: 700;
+  //   font-size: 32px;
+  //   line-height: 41px;
+  //   color: #313237;
+  //   letter-spacing: -0.01em;
+  // }
 
-  &__title-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  // &__title-wrap {
+
+  // }
+}
+
+.title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+
+
+}
+
+
+.content {
+  display: flex;
+  overflow: hidden;
+  // flex-wrap: wrap;
+  gap: 16px;
 }
 
 .card {
@@ -272,10 +355,10 @@ a {
 
 
 .img {
-  background-image: url(./img/1.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  // background-image: url(./img/1.png);
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: contain;
   height: 208px;
 }
 
@@ -287,7 +370,47 @@ a {
 //   display: flex;
 // }
 
+// -------------------category  ------
 
+.category {
+  margin-bottom: 80px;
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__content {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__content-card{
+
+  }
+
+  &__content-img {
+    margin-bottom: 24px;
+  }
+
+  &__content-name {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    color: #313237;
+    margin-bottom: 5px;
+  }
+
+  &__content-amount {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #89939A;
+  }
+}
+ // -----newModels ----------
+ .newModels {
+  margin-bottom: 80px;
+ }
 
 
 
@@ -300,13 +423,30 @@ a {
 
   &__flex {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
-.logo-footer {
-  margin-right: 382px;
+.backToTop {
+  display: flex;
+  gap: 16px;
+
+
+  // justify-content: center;
+  align-items: center;
+
+  &__text {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #89939A;
+
+  }
 }
 
 .nav-footer {
-  margin-right: 303px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
