@@ -1,42 +1,53 @@
 /* eslint-disable global-require */
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import '../App.scss';
-// import { MdKeyboardArrowRight, MdKeyboardArrowLeft, MdOutlineKeyboardArrowUp } from 'react-icons/md';
+import { MdKeyboardArrowRight } from 'react-icons/md';
+import 'bulma/css/bulma.min.css';
 import React, { useEffect, useState } from 'react';
 import { getPhones } from '../api/fetching';
-import { ProductCard } from '../components/ProductCard';
-// import { ProductCard } from '../components/ProductCard';
-// import { Products } from '../type/products';
-// import { ProductsSlider } from '../components/ProductsSlider';
+import { ProductsList } from '../components/ProductsList';
 
-// interface Props {
-//   filteredDiscout: Products[];
-//   filteredNew: Products[];
-// }
+import '../App.scss';
 
 export const PhonesPage:React.FC = () => {
   const [filteredPhone, setFilteredPhone] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     getPhones()
       .then(products => {
-        // setData(products);
         const filterPhone
           = products.filter((product: any) => product.type === 'phone');
 
         setFilteredPhone(filterPhone);
-        // console.log(filterPhone);
       });
+    setIsLoading(false);
   }, []);
 
   return (
-    <div className="container">
-      <h2 className="title">Mobile phones</h2>
+    <div className="phonesPage">
+      <div className="container">
+        <div className="phonesPage__navigation">
+          <img
+            src={require('../img/Home.svg').default}
+            alt="home"
+          />
 
-      <ProductCard product={filteredPhone} />
-      {/* <ProductCard products={filteredPhone} /> */}
+          <div className="phonesPage__navigation--arrow">
+            <MdKeyboardArrowRight />
+          </div>
+          <span className="phonesPage__navigation--pageName">Phones</span>
+        </div>
+        <h1 className="phonesPage__title title">Mobile phones</h1>
 
+        <span className="phonesPage__amount">95 models</span>
+
+        <ProductsList
+          filteredProductsList={filteredPhone}
+          isLoading={isLoading}
+        />
+      </div>
     </div>
 
   );

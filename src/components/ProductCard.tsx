@@ -16,7 +16,7 @@ export const ProductCard:React.FC<Props> = ({ product }) => {
   // } = product;
 
   return (
-    <div className="card" data-cy="cardsContainer">
+    <div className="card">
       <div className="card__img">
         <img
           src={product.imageUrl}

@@ -450,3 +450,54 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+// ----------- phonesPage ---------
+.phonesPage {
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__amount {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #89939A;
+    margin-bottom: 40px;
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 13px;
+    margin-bottom: 40px;
+
+    // &--home {
+    //   display: block;
+    //   height: 14px;
+    // }
+
+    &--pageName {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+      color: #89939A;
+    }
+
+    &--arrow {
+      color: #B4BDC4;
+    }
+
+
+  }
+
+
+
+
+
+  &__content {
+    flex-wrap: wrap;
+  }
+}

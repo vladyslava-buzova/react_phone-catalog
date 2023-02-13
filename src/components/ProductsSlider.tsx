@@ -16,7 +16,7 @@ export const ProductsSlider:React.FC<Props> = ({ filtered }) => {
       {filtered.map(product => (
         <ProductCard
           key={product.id}
-          // data-cy="cardsContainer"
+          data-cy="cardsContainer"
           product={product}
         />
       ))}
