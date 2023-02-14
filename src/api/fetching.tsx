@@ -12,3 +12,5 @@ const request = (url: string) => {
 export const getHotPriceProducts = () => request('/products.json');
 export const getBrandNewProducts = () => request('/products.json');
 export const getPhones = () => request('/products.json');
+export const getTablets = () => request('/products.json');
+export const getAccessories = () => request('/products.json');

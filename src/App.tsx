@@ -10,6 +10,7 @@ import { PhonesPage } from './pages/phones';
 import { Tablets } from './pages/tablet';
 import { Favourite } from './pages/favourite';
 import { Cart } from './pages/cart';
+import { Accessories } from './pages/accessories';
 // import { Favourite } from './pages/accessories';
 // import { PhonesPage } from './pages/phones';
 
@@ -77,6 +78,11 @@ export const App:React.FC = () => {
         />
 
         <Route
+          path="accessories"
+          element={<Accessories />}
+        />
+
+        <Route
           path="favourite"
           element={<Favourite />}
         />
@@ -85,6 +91,11 @@ export const App:React.FC = () => {
           path="cart"
           element={<Cart />}
         />
+
+        {/* <Route
+          path="*"
+          element={<p>Page not found<p/>}
+        /> */}
 
       </Routes>
 

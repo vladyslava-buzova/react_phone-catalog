@@ -48,12 +48,31 @@ export const PhonesPage:React.FC = () => {
           <div className="sorting">
             <div className="sorting__sortBy">
               <span className="sorting__title">Sort by</span>
-              <select name="newest" id="">Newest</select>
+              {/* <select name="newest" id="">Newest</select> */}
+              <select
+                data-cy="statusSelect"
+                // value={selection}
+                // onChange={handleChange}
+              >
+                <option value="age">Newest</option>
+                <option value="name">Alphabetically</option>
+                <option value="price">Cheapest</option>
+              </select>
             </div>
 
             <div className="sorting__items">
               <span className="sorting__title">Items on page</span>
-              <select name="newest" id="">16</select>
+              <select
+                data-cy="perPageSelector"
+                // data-cy="paginationRight"
+                // value={selection}
+                // onChange={handleChange}
+              >
+                <option value="age">All</option>
+                <option value="name">4</option>
+                <option value="price">8</option>
+                <option value="price">16</option>
+              </select>
             </div>
           </div>
 
@@ -63,7 +82,11 @@ export const PhonesPage:React.FC = () => {
 
           <div className="pagination">
             {/* <div className="arrows-wrapp"> */}
-            <button type="button" className="pagination__arrow previous btn">
+            <button
+              type="button"
+              className="pagination__arrow previous btn"
+              data-cy="paginationLeft"
+            >
               <MdKeyboardArrowLeft />
             </button>
 
@@ -74,7 +97,11 @@ export const PhonesPage:React.FC = () => {
               <button type="button" className="pagination__btn btn">4</button>
             </div>
 
-            <button type="button" className="pagination__arrow next btn">
+            <button
+              type="button"
+              className="pagination__arrow next btn"
+              data-cy="paginationRight"
+            >
               <MdKeyboardArrowRight />
             </button>
             {/* </div> */}
