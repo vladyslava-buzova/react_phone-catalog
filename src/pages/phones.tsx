@@ -28,20 +28,20 @@ export const PhonesPage:React.FC = () => {
 
       <div className="phonesPage">
         <div className="container">
-          <div className="phonesPage__navigation">
+          <div className="page__navigation">
             <img
               src={require('../img/Home.svg').default}
               alt="home"
             />
 
-            <div className="phonesPage__navigation--arrow">
+            <div className="page__navigation--arrow">
               <MdKeyboardArrowRight />
             </div>
-            <span className="phonesPage__navigation--pageName">Phones</span>
+            <span className="page__navigation--pageName">Phones</span>
           </div>
-          <h1 className="phonesPage__title title">Mobile phones</h1>
+          <h1 className="page__title title">Mobile phones</h1>
 
-          <span className="phonesPage__amount">
+          <span className="page__amount">
             {`${filteredPhone.length} models`}
           </span>
 
