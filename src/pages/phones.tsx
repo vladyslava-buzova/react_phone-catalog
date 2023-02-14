@@ -1,20 +1,18 @@
 /* eslint-disable global-require */
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { MdKeyboardArrowRight } from 'react-icons/md';
-import 'bulma/css/bulma.min.css';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+// import 'bulma/css/bulma.min.css';
 import React, { useEffect, useState } from 'react';
 import { getPhones } from '../api/fetching';
 import { ProductsList } from '../components/ProductsList';
-
 import '../App.scss';
+// import { Header } from '../components/header';
 
 export const PhonesPage:React.FC = () => {
   const [filteredPhone, setFilteredPhone] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true);
     getPhones()
       .then(products => {
         const filterPhone
@@ -22,31 +20,66 @@ export const PhonesPage:React.FC = () => {
 
         setFilteredPhone(filterPhone);
       });
-    setIsLoading(false);
   }, []);
 
   return (
-    <div className="phonesPage">
-      <div className="container">
-        <div className="phonesPage__navigation">
-          <img
-            src={require('../img/Home.svg').default}
-            alt="home"
+    <div className="phones">
+      {/* <Header /> */}
+
+      <div className="phonesPage">
+        <div className="container">
+          <div className="phonesPage__navigation">
+            <img
+              src={require('../img/Home.svg').default}
+              alt="home"
+            />
+
+            <div className="phonesPage__navigation--arrow">
+              <MdKeyboardArrowRight />
+            </div>
+            <span className="phonesPage__navigation--pageName">Phones</span>
+          </div>
+          <h1 className="phonesPage__title title">Mobile phones</h1>
+
+          <span className="phonesPage__amount">
+            {`${filteredPhone.length} models`}
+          </span>
+
+          <div className="sorting">
+            <div className="sorting__sortBy">
+              <span className="sorting__title">Sort by</span>
+              <select name="newest" id="">Newest</select>
+            </div>
+
+            <div className="sorting__items">
+              <span className="sorting__title">Items on page</span>
+              <select name="newest" id="">16</select>
+            </div>
+          </div>
+
+          <ProductsList
+            filteredProductsList={filteredPhone}
           />
 
-          <div className="phonesPage__navigation--arrow">
-            <MdKeyboardArrowRight />
+          <div className="pagination">
+            {/* <div className="arrows-wrapp"> */}
+            <button type="button" className="pagination__arrow previous btn">
+              <MdKeyboardArrowLeft />
+            </button>
+
+            <div className="pagination__numbers">
+              <button type="button" className="pagination__btn btn">1</button>
+              <button type="button" className="pagination__btn btn">2</button>
+              <button type="button" className="pagination__btn btn">3</button>
+              <button type="button" className="pagination__btn btn">4</button>
+            </div>
+
+            <button type="button" className="pagination__arrow next btn">
+              <MdKeyboardArrowRight />
+            </button>
+            {/* </div> */}
           </div>
-          <span className="phonesPage__navigation--pageName">Phones</span>
         </div>
-        <h1 className="phonesPage__title title">Mobile phones</h1>
-
-        <span className="phonesPage__amount">95 models</span>
-
-        <ProductsList
-          filteredProductsList={filteredPhone}
-          isLoading={isLoading}
-        />
       </div>
     </div>
 
