@@ -521,6 +521,23 @@ a {
     line-height: 15px;
     color: #89939A;
   }
+
+  &__selection {
+    border: none;
+    border: 1px solid #B4BDC4;
+    margin-top: 4px;
+    padding: 10px 15px 9px 12px;
+
+    &--sortBy {
+      width: 176px;
+      // height: 40px;
+    }
+
+    &--items {
+      width: 128px;
+      // height: 40px;
+    }
+  }
 }
 
 .pagination {

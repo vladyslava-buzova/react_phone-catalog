@@ -51,6 +51,7 @@ export const PhonesPage:React.FC = () => {
               {/* <select name="newest" id="">Newest</select> */}
               <select
                 data-cy="statusSelect"
+                className="sorting__selection sorting__selection--sortBy"
                 // value={selection}
                 // onChange={handleChange}
               >
@@ -64,6 +65,7 @@ export const PhonesPage:React.FC = () => {
               <span className="sorting__title">Items on page</span>
               <select
                 data-cy="perPageSelector"
+                className="sorting__selection sorting__selection--items"
                 // data-cy="paginationRight"
                 // value={selection}
                 // onChange={handleChange}
