@@ -2,6 +2,7 @@
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { RiArrowDownSLine } from 'react-icons/ri';
 // import 'bulma/css/bulma.min.css';
 import React, { useEffect, useState } from 'react';
 import { getPhones } from '../api/fetching';
@@ -46,35 +47,44 @@ export const PhonesPage:React.FC = () => {
           </span>
 
           <div className="sorting">
-            <div className="sorting__sortBy">
+            <div className="wrapp">
               <span className="sorting__title">Sort by</span>
-              {/* <select name="newest" id="">Newest</select> */}
-              <select
-                data-cy="statusSelect"
-                className="sorting__selection sorting__selection--sortBy"
-                // value={selection}
-                // onChange={handleChange}
-              >
-                <option value="age">Newest</option>
-                <option value="name">Alphabetically</option>
-                <option value="price">Cheapest</option>
-              </select>
+              <div className="sorting__sortBy">
+                <select
+                  data-cy="statusSelect"
+                  className="sorting__selection sorting__selection--sortBy"
+                >
+                  <option value="age">Newest</option>
+                  <option value="name">Alphabetically</option>
+                  <option value="price">Cheapest</option>
+                </select>
+                {/* <span className="custom-arrow" /> */}
+                <span className="custom-arrow">
+                  <RiArrowDownSLine />
+                </span>
+              </div>
             </div>
 
-            <div className="sorting__items">
+            <div className="wrapp">
               <span className="sorting__title">Items on page</span>
-              <select
-                data-cy="perPageSelector"
-                className="sorting__selection sorting__selection--items"
-                // data-cy="paginationRight"
-                // value={selection}
-                // onChange={handleChange}
-              >
-                <option value="age">All</option>
-                <option value="name">4</option>
-                <option value="price">8</option>
-                <option value="price">16</option>
-              </select>
+              <div className="sorting__items">
+                <select
+                  data-cy="perPageSelector"
+                  className="sorting__selection sorting__selection--items"
+                  // data-cy="paginationRight"
+                  // value={selection}
+                  // onChange={handleChange}
+                >
+                  <option value="age">All</option>
+                  <option value="name">4</option>
+                  <option value="price">8</option>
+                  <option value="price">16</option>
+                </select>
+                {/* <span className="custom-arrow" /> */}
+                <span className="custom-arrow">
+                  <RiArrowDownSLine />
+                </span>
+              </div>
             </div>
           </div>
 
